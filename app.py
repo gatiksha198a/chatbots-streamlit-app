@@ -3,7 +3,6 @@ import pickle
 import nltk
 import string
 import random
-from nltk.tokenize import sent_tokenize, word_tokenize
 from nltk.stem import WordNetLemmatizer
 
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -25,8 +24,9 @@ st.markdown(
 # ---------------- LOAD CHATBOT DATA ----------------
 with open("chatbot_data.sav", "rb") as file:
     chatbot_text = pickle.load(file)
-from nltk.tokenize import sent_tokenize
-sent_tokens = sent_tokenize(chatbot_text)
+
+sent_tokens = chatbot_text.split('.')
+
 
 
 lemmer = nltk.stem.WordNetLemmatizer()
