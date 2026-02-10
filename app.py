@@ -26,7 +26,8 @@ st.markdown(
 with open("chatbot_data.sav", "rb") as file:
     chatbot_text = pickle.load(file)
 from nltk.tokenize import sent_tokenize
-sent_tokens = sent_tokenize(chatbot_text, language='english')
+sent_tokens = sent_tokenize(chatbot_text)
+
 
 lemmer = nltk.stem.WordNetLemmatizer()
 
