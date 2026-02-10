@@ -34,8 +34,9 @@ lemmer = nltk.stem.WordNetLemmatizer()
 # ---------------- TEXT CLEANING ----------------
 def clean_text(text):
     return [lemmer.lemmatize(word.lower())
-            for word in nltk.word_tokenize(text)
+            for word in text.split()
             if word not in string.punctuation]
+
 
 # ---------------- GREETING LOGIC ----------------
 greetings = ("hi", "hello", "hey")
