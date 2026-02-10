@@ -30,7 +30,8 @@ st.markdown(
 
 
 # ---------------- LOAD CHATBOT DATA ----------------
-chatbot_text =  pickle.load(open('C:/Users/gatik/Downloads/chatbot/chatbot_data.sav', 'rb'))
+with open("chatbot_data.pkl", "rb") as file:
+    chatbot_text = pickle.load(file)
 from nltk.tokenize import sent_tokenize
 sent_tokens = sent_tokenize(chatbot_text, language='english')
 
@@ -116,3 +117,4 @@ if user_input:
 
     with st.chat_message("assistant"):
         st.markdown(bot_reply)
+
